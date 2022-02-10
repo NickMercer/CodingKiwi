@@ -10,13 +10,12 @@ namespace TinyZoo.Characters.Inputs.Commands
         private CommandPickupsList _pickupsList;
 
         [Space, Header("Settings")]
-        [SerializeField]
-        private InputCommand _command;
-        public InputCommand Command => _command;
+        [SerializeReference, SubclassSelector]
+        private IInputCommand _command = new EmptyInputCommand();
+        public IInputCommand Command => _command;
 
         private void Awake()
         {
-            _command = _command.Copy();
             _pickupsList.Add(this);
         }
 

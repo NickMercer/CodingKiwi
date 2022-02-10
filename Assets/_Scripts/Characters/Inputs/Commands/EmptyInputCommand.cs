@@ -1,16 +1,19 @@
+using System;
 using UnityEngine;
 
 namespace TinyZoo.Characters.Inputs.Commands
 {
-    [CreateAssetMenu(menuName = "Input Commands/Empty")]
-    public class EmptyInputCommand : InputCommand
+    [Serializable]
+    public class EmptyInputCommand : IInputCommand
     {
-        public override void Begin() => IsComplete = true;
+        public bool IsComplete { get; private set; }
 
-        public override bool GetJumpInput() => false;
+        public Vector3 Position { get; set; }
 
-        public override Vector3 GetNormalizedMovementVector(Vector3 previousMovementVector) => Vector3.zero;
+        public void Begin() => IsComplete = true;
 
-        public override InputCommand Copy() => CreateInstance<EmptyInputCommand>();
+        public bool GetJumpInput() => false;
+
+        public Vector3 GetNormalizedMovementVector(Vector3 previousMovementVector) => Vector3.zero;
     }
 }

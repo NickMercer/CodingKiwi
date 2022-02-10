@@ -24,8 +24,7 @@ namespace TinyZoo.Characters.Inputs
         [SerializeField]
         private Vector3 _nearestCommandLocation = Vector3.zero;
 
-        [SerializeField]
-        private InputCommand _currentCommand;
+        private IInputCommand _currentCommand;
         
         [SerializeField]
         private CommandPickup _nearestCommandPickup;
@@ -42,6 +41,8 @@ namespace TinyZoo.Characters.Inputs
                 _nearestCommandPickup = null;
                 _currentCommand = pickup.Command;
                 _currentCommand.Begin();
+
+                collision.rigidbody.isKinematic = true;
                 Destroy(pickup.gameObject);
             }
         }

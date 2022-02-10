@@ -1,16 +1,20 @@
 using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 
 namespace TinyZoo.Characters.Inputs.Commands
 {
-    [CreateAssetMenu(menuName = "Input Commands/Wait")]
-    public class WaitInputCommand : InputCommand
+    [Serializable]
+    public class WaitInputCommand : IInputCommand
     {
-        [SerializeField]
+        [SerializeField, Header("Settings")]
         [Tooltip("The time in seconds that the wait command is active before it completes.")]
         private float _waitTimeInSeconds = 1f;
 
-        public override void Begin() => UniTask.Run(() => CompleteWaitAsync()).Forget();
+        public bool IsComplete { get; private set; }
+        public Vector3 Position { get; set; }
+
+        public void Begin() => UniTask.Run(() => CompleteWaitAsync()).Forget();
 
         private async UniTaskVoid CompleteWaitAsync()
         {
@@ -18,16 +22,8 @@ namespace TinyZoo.Characters.Inputs.Commands
             IsComplete = true;
         }
 
-        public override bool GetJumpInput() => false;
+        public bool GetJumpInput() => false;
 
-        public override Vector3 GetNormalizedMovementVector(Vector3 previousMovementVector) => Vector3.zero;
-
-        public override InputCommand Copy()
-        {
-            var waitCommand = CreateInstance<WaitInputCommand>();
-            waitCommand._waitTimeInSeconds = _waitTimeInSeconds;
-
-            return waitCommand;
-        }
+        public Vector3 GetNormalizedMovementVector(Vector3 previousMovementVector) => Vector3.zero;
     }
 }
