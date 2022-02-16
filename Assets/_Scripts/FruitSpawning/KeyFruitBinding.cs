@@ -12,6 +12,10 @@ namespace TinyZoo.FruitSpawning
         public KeyCode Key => _keyCode;
 
         [SerializeField]
+        private string _fruitId;
+        public string FruitId => _fruitId;
+
+        [SerializeField]
         private CommandPickup _commandFruit;
         public CommandPickup CommandFruit => _commandFruit;
     }

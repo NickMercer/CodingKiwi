@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TinyZoo.Characters.Inputs.Commands;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace TinyZoo.FruitSpawning
 {
@@ -37,21 +38,55 @@ namespace TinyZoo.FruitSpawning
 
         private void UpdateFruitSelection()
         {
-            foreach (var pair in _fruitKeys)
+            foreach (var fruitOption in _fruitKeys)
             {
-                if (Input.GetKeyDown(pair.Key))
+                if (Input.GetKeyDown(fruitOption.Key))
                 {
-                    _selectedFruit = pair.CommandFruit;
+                    _selectedFruit = fruitOption.CommandFruit;
                 }
             }
         }
+
+        public void SelectFruit(string fruitId)
+        {
+            var fruitOption = _fruitKeys.FirstOrDefault(x => x.FruitId == fruitId);
+            if(fruitOption != null)
+            {
+                _selectedFruit = fruitOption.CommandFruit;
+            }
+            else
+            {
+                Debug.Log($"Tried to select Fruit with invalid id {fruitId}", gameObject);
+            }
+        }
+
         private void SpawnFruitOnClick()
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) && EventSystem.current.IsPointerOverGameObject() == false)
             {
                 var mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _cam.transform.position.z * -1);
                 var mouseWorldPosition = _cam.ScreenToWorldPoint(mousePos);
                 mouseWorldPosition.z = _fixedZLevel;
+
+                var maxAttempts = 5;
+                var attempts = 0;
+
+                while(attempts < maxAttempts)
+                {
+                    var maxColliders = 1;
+                    Collider[] spawnPointCollisions = new Collider[maxColliders];
+                    var numberOfCollisions = Physics.OverlapSphereNonAlloc(mouseWorldPosition, 1f, spawnPointCollisions);
+
+                    if(numberOfCollisions > 0)
+                    {
+                        mouseWorldPosition.y += 2f;
+                        attempts++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
 
                 Instantiate(_selectedFruit, mouseWorldPosition, Quaternion.identity);
             }
