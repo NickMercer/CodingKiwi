@@ -1,12 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8586039083713745429
+--- !u!1001 &4466782040750358747
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3219919274722391575, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 6da9d5cde97ad394e97f1227e5fbf342, type: 3}
+    - target: {fileID: 6559869315864116943, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae71949ca2523ff4d9c252b6ce7e87b4, type: 2}
     - target: {fileID: 7868480065349361922, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,9 +59,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7868480065349362046, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: _command
+      value: 3277205796940414978
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868480065349362046, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: managedReferences[3277205796940414978]
+      value: Assembly-CSharp TinyZoo.Characters.Inputs.Commands.RunInputCommand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868480065349362046, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: managedReferences[3277205796940414978]._moveVector.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868480065349362046, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: managedReferences[3277205796940414978]._moveVector.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868480065349362046, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: managedReferences[3277205796940414978]._moveVector.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868480065349362046, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
+      propertyPath: managedReferences[3277205796940414978]._runTimeInSeconds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7868480065349362047, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
       propertyPath: m_Name
-      value: PickupBase
+      value: RightRocketPop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34c5fedff6e3ffd44b14cfb0cdee823e, type: 3}
