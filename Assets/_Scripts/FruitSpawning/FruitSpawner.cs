@@ -74,10 +74,12 @@ namespace TinyZoo.FruitSpawning
                 while(attempts < maxAttempts)
                 {
                     var maxColliders = 1;
-                    Collider[] spawnPointCollisions = new Collider[maxColliders];
-                    var numberOfCollisions = Physics.OverlapSphereNonAlloc(mouseWorldPosition, 1f, spawnPointCollisions);
+                    Collider[] sphereCollisions = new Collider[maxColliders];
+                    var sphereCollisionCount = Physics.OverlapSphereNonAlloc(mouseWorldPosition, 1f, sphereCollisions);
 
-                    if(numberOfCollisions > 0)
+                    var downwardHit = Physics.Raycast(mouseWorldPosition, Vector3.down, out var downwardHitInfo, 10f);
+
+                    if(sphereCollisionCount > 0 || downwardHit == false)
                     {
                         mouseWorldPosition.y += 2f;
                         attempts++;

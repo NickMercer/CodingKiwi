@@ -585,16 +585,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fruitKeys:
   - _keyCode: 49
-    _fruitId: 
+    _fruitId: RightRocketPop
     _commandFruit: {fileID: 5822950323037217189, guid: 71f8fc074abfbbf4d82b9c2c615fbb52, type: 3}
   - _keyCode: 50
-    _fruitId: 
+    _fruitId: LeftLemon
     _commandFruit: {fileID: 942066032272206444, guid: 0f4dd96560600464c830e2e195133ee1, type: 3}
   - _keyCode: 51
-    _fruitId: 
+    _fruitId: HopBurger
     _commandFruit: {fileID: 1879630385504383851, guid: 98cf42f3056f9174ba9e5adea5781718, type: 3}
   - _keyCode: 52
-    _fruitId: 
+    _fruitId: Waitermelon
     _commandFruit: {fileID: 6215317595472822671, guid: 39f662f16d1dc3b43a4de728e07db074, type: 3}
   _fixedZLevel: -1.68
 --- !u!4 &251288767
@@ -716,10 +716,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitSlot (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5396779237762271225, guid: c8715dc67f63826499476e656b307233, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 929a062c91b2e9b49ba0e761f06e6baf, type: 3}
     - target: {fileID: 6655975062823069849, guid: c8715dc67f63826499476e656b307233, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1679,7 +1675,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7786885, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1737,10 +1733,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitSlot (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5396779237762271225, guid: c8715dc67f63826499476e656b307233, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9e63d04f7c76b2f4c995f04e16dd0646, type: 3}
     - target: {fileID: 6507743600406740175, guid: c8715dc67f63826499476e656b307233, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1946,6 +1938,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1594191102}
+  - {fileID: 1875103555}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2359,10 +2352,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FruitSlot (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5396779237762271225, guid: c8715dc67f63826499476e656b307233, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfd9c8eefb52f88459cdeb894f488562, type: 3}
     - target: {fileID: 6507743600406740175, guid: c8715dc67f63826499476e656b307233, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3365,13 +3354,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875103552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1118946959}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1934836623 stripped
 Transform:

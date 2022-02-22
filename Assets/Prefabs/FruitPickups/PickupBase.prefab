@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3219919274722391575}
   - component: {fileID: 6559869315864116943}
   - component: {fileID: 7868480065349362046}
+  - component: {fileID: 5028626533468977498}
   m_Layer: 6
   m_Name: PickupBase
   m_TagString: Untagged
@@ -136,3 +137,15 @@ MonoBehaviour:
     RefIds:
     - rid: 3277205684125958174
       type: {class: EmptyInputCommand, ns: TinyZoo.Characters.Inputs.Commands, asm: Assembly-CSharp}
+--- !u!114 &5028626533468977498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7868480065349362047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0b2692ea566f84881970fe169198c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
